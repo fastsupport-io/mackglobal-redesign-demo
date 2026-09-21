@@ -33,6 +33,8 @@ const LOGO_IMAGE =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663036148199/sstfMAgvwqYwXWWw.webp";
 const CAPABILITY_STATEMENT =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663036148199/gYmoSghemWSQyCek.pdf";
+const COURSE_ACCESS_URL =
+  "https://ue2cwdg9azc4923oiaeh.app.clientclub.net/courses/offers/b3870359-27d7-43cd-a2e7-2da8d6bd6bdb";
 
 const navItems = [
   { label: "Capabilities", href: "#capabilities" },
@@ -154,12 +156,6 @@ function SectionHeading({
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [noticeVisible, setNoticeVisible] = useState(false);
-
-  const openLearningHub = () => {
-    setNoticeVisible(true);
-    window.setTimeout(() => setNoticeVisible(false), 5000);
-  };
 
   const handleInquiry = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -373,10 +369,10 @@ export default function Home() {
                     <div key={benefit} className="flex items-center gap-3 text-sm font-semibold text-white/85"><Check size={17} className="text-[#e2ba68]" /> {benefit}</div>
                   ))}
                 </div>
-                <button type="button" onClick={openLearningHub} className="button-primary mt-10 w-fit">
+                <a href={COURSE_ACCESS_URL} target="_blank" rel="noreferrer" className="button-primary mt-10 w-fit">
                   Enter the learning hub <ArrowRight size={18} />
-                </button>
-                <p className="mt-4 text-xs leading-5 text-white/70">Demo connection point. Replace with the final GoHighLevel community or classroom URL at launch.</p>
+                </a>
+                <p className="mt-4 text-xs leading-5 text-white/70">Course access opens in a new tab.</p>
               </div>
             </div>
           </div>
@@ -437,14 +433,6 @@ export default function Home() {
         <div className="container mt-7 flex flex-col gap-3 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Mack Global, LLC. Demo redesign.</p><p>P.O. Box 1029 · Mechanicsville, VA 23111</p></div>
       </footer>
 
-      {noticeVisible ? (
-        <div role="status" aria-live="polite" className="fixed bottom-5 right-5 z-[80] max-w-sm rounded-2xl border border-[#d6aa57]/35 bg-[#102119] p-5 text-white shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
-          <div className="flex items-start gap-3">
-            <CircleCheckBig className="mt-0.5 shrink-0 text-[#e2ba68]" size={20} />
-            <div><p className="text-sm font-extrabold">GHL learning-hub connection point is ready</p><p className="mt-1 text-xs leading-5 text-white/60">Add Mack Global’s final GoHighLevel community URL to activate member access.</p></div>
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 }
