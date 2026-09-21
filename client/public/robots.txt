@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fastsupport-io.github.io/mackglobal-redesign-demo/sitemap.xml
