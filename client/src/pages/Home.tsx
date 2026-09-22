@@ -35,6 +35,7 @@ const CAPABILITY_STATEMENT =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663036148199/gYmoSghemWSQyCek.pdf";
 const COURSE_ACCESS_URL =
   "https://ue2cwdg9azc4923oiaeh.app.clientclub.net/courses/offers/b3870359-27d7-43cd-a2e7-2da8d6bd6bdb";
+const MEMBER_LOGIN_URL = "https://ue2cwdg9azc4923oiaeh.app.clientclub.net/";
 
 const navItems = [
   { label: "Capabilities", href: "#capabilities" },
@@ -110,7 +111,7 @@ const faqs = [
   },
   {
     q: "What will the Government Contracting Learning Hub include?",
-    a: "The planned learning hub will connect learners to instructor-led classes, practical resources, peer discussion, and structured guidance for navigating government contracting. The final button can connect directly to Mack Global’s GoHighLevel community and classroom URL.",
+    a: "The Government Contracting Learning Hub connects learners to instructor-led classes, practical resources, peer discussion, and structured guidance for navigating government contracting. New learners can sign up through the course offer, while returning members can log in directly.",
   },
 ];
 
@@ -369,10 +370,15 @@ export default function Home() {
                     <div key={benefit} className="flex items-center gap-3 text-sm font-semibold text-white/85"><Check size={17} className="text-[#e2ba68]" /> {benefit}</div>
                   ))}
                 </div>
-                <a href={COURSE_ACCESS_URL} target="_blank" rel="noreferrer" className="button-primary mt-10 w-fit">
-                  Enter the learning hub <ArrowRight size={18} />
-                </a>
-                <p className="mt-4 text-xs leading-5 text-white/70">Course access opens in a new tab.</p>
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <a href={COURSE_ACCESS_URL} target="_blank" rel="noreferrer" className="button-primary w-fit">
+                    Sign up for the learning hub <ArrowRight size={18} />
+                  </a>
+                  <a href={MEMBER_LOGIN_URL} target="_blank" rel="noreferrer" className="button-secondary w-fit border-white/25 text-white hover:border-[#e2ba68] hover:bg-white/10">
+                    Member log in <ArrowRight size={18} />
+                  </a>
+                </div>
+                <p className="mt-4 text-xs leading-5 text-white/70">New to the program? Sign up through the course offer. Existing members can log in directly. Both links open in a new tab.</p>
               </div>
             </div>
           </div>
